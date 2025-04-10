@@ -26,6 +26,7 @@ const currentIndex = ref(0); // 現在の質問のインデックス
 const isCorrect = ref(false); // 回答が正解かどうか
 const currentQuestion = ref(questionData[currentIndex.value]); // 現在の質問データ
 
+// TODO : 回答の結果が固定でライチュウになっていると思われるので、QuestionData.jsから２問目以降の回答結果を取って来れるようにする
 const handleAnswer = (correct) => {
     isCorrect.value = correct;
     console.log(correct);
