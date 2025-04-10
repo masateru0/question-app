@@ -16,6 +16,10 @@ const correctCount = Number(route.query.correct) || 0
 const totalQuestions = Number(route.query.total) || 10
 
 const resultImage = computed(() => {
+
+    if (correctAnswers === 0) return query('@/assets/result0.png',)
+
+
     if (correctAnswers === 0) return new URL('@/assets/result0.png', import.meta.url).href;
     if (correctAnswers <= 3) return new URL('@/assets/result1to3.jpg', import.meta.url).href;
     if (correctAnswers <= 6) return new URL('@/assets/result4to6.jpeg', import.meta.url).href;
