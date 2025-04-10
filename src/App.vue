@@ -1,3 +1,9 @@
 <template>
+    <div class="container mt-4">
+        <router-view />
+    </div>
 </template>
-<script setup></script>
+<script setup>
+import router from './router';
+
+</script>
