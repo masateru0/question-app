@@ -21,7 +21,12 @@ const props = defineProps({
 
 const emit = defineEmits(['answered'])
 
+let answered = false // 回答済みかどうかのフラグ
+
 const handleAnswer = (choice) => {
+    if (answered) return // 一度クリックされたら、handleAnswerをすぐには再度呼び出せないように「一時的な無効化」
+    answered = true
+
     const correctAnswer = props.question.answer // 先頭にpropsをつけなきゃいけなかったので修正
     const isCorrect = choice === correctAnswer
     emit('answered', isCorrect) // 回答結果を親に渡す

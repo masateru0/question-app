@@ -1,5 +1,6 @@
 <template>
         <button @click="$emit('click')" class="btn btn-outline-primary m-2">
+
             {{ text }}
         </button>
 </template>
@@ -11,4 +12,7 @@ defineProps({
         required: true
     }
 })
+
+// @click="$emit('click')" に加えて、button 内部でまた何か処理してたら クリックが2重に発火している可能性があった
+// Question.vueのコードをいじってエラー解消した
 </script>

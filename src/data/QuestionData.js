@@ -1,16 +1,27 @@
+import Raichu from '@/assets/Raichu.png'
+import Lizardon from '@/assets/Lizardon.png'
+import Redgreen from '@/assets/Redgreen.png'
+import DandP from '@/assets/DandP.jpg'
+import XandY from '@/assets/XandY.jpg'
+import BandW from '@/assets/BandW.jpg'
+import First3Dg from '@/assets/First3Dg.jpg'
+import Rekkuza from '@/assets/Rekkuza.jpg'
+import Rugia from '@/assets/Rugia.png'
+import Kamonegi from '@/assets/Kamonegi.png'
+
 export default [
     {
         text: 'ピカチュウの進化系は？',
         choices: ['ミミッキュ', 'ライチュウ', 'デデンネ', 'ピチュー'],
         answer: 'ライチュウ',
-        correctImage: new URL('@/assets/raichu.png', import.meta.url).href,
+        correctImage: Raichu,
         explanation: 'ピカチュウは"かみなりのいし"を使うことでライチュウに進化します。',
     },
     {
         text: 'ヒトカゲの最終進化系は？',
         choices: ['リザード', 'バシャーモ', 'リザードン', 'ゴウカザル'],
         answer: 'リザードン',
-        correctImage: new URL('@/assets/lizardon.png', import.meta.url).href,
+        correctImage: Lizardon,
         explanation: 'ヒトカゲ⇨リザード⇨リザードンの順に進化します。',
     },
     {
@@ -22,7 +33,7 @@ export default [
             'ポケットモンスター 金・銀',
         ],
         answer: 'ポケットモンスター 赤・緑',
-        correctImage: new URL('@/assets/redgreen.png', import.meta.url).href,
+        correctImage: Redgreen,
         explanation: 'ポケットモンスター 赤・緑は1996年に発売されました。',
     },
     {
@@ -34,7 +45,7 @@ export default [
             'ポケットモンスター ダイヤモンド・パール',
         ],
         answer: 'ポケットモンスター ダイヤモンド・パール',
-        correctImage: new URL('@/assets/DandP.jpg', import.meta.url).href,
+        correctImage: DandP,
         explanation: 'ポケットモンスター ダイヤモンド・パールは2006年に発売されました。',
     },
     {
@@ -46,7 +57,7 @@ export default [
             'ポケットモンスター ブラック・ホワイト',
         ],
         answer: 'ポケットモンスター X・Y',
-        correctImage: new URL('@/assets/XandY.jpg', import.meta.url).href,
+        correctImage: XandY,
         explanation:
             'ポケットモンスター X・Yは2013年に発売され、メガシンカが初めて導入されました。',
     },
@@ -59,7 +70,7 @@ export default [
             'ポケットモンスター ダイヤモンド・パール',
         ],
         answer: 'ポケットモンスター ブラック・ホワイト',
-        correctImage: new URL('@/assets/BandW.jpg', import.meta.url).href,
+        correctImage: BandW,
         explanation:
             'ポケットモンスター ブラック・ホワイトは2010年に発売され、オンライン対戦が可能になりました。',
     },
@@ -72,7 +83,7 @@ export default [
             'ポケットモンスター ブラック・ホワイト',
         ],
         answer: 'ポケットモンスター X・Y',
-        correctImage: new URL('@/assets/first3D.jpg', import.meta.url).href,
+        correctImage: First3Dg,
         explanation:
             'ポケットモンスター X・Yは2013年に発売され、3Dグラフィックが初めて採用されました。',
     },
@@ -80,21 +91,21 @@ export default [
         text: 'ポケットモンスターエメラルドのでんせつのポケモンは？',
         choices: ['ルギア', 'ホウオウ', 'ミュウツー', 'レックウザ'],
         answer: 'レックウザ',
-        correctImage: new URL('@/assets/rekkuza.jpg', import.meta.url).href,
+        correctImage: Rekkuza,
         explanation: 'ポケットモンスターエメラルドではレックウザが伝説のポケモンとして登場します。',
     },
     {
         text: 'ポケモンGOで最初に実装された伝説のポケモンは？',
         choices: ['ルギア', 'ミュウツー', 'レックウザ', 'ホウオウ'],
         answer: 'ルギア',
-        correctImage: new URL('@/assets/rugia.png', import.meta.url).href,
+        correctImage: Rugia,
         explanation: 'ポケモンGOで最初に実装された伝説のポケモンはルギアです。',
     },
     {
         text: 'ポケモンGOで最初に実装された地域限定ポケモンは？',
         choices: ['バリヤード', 'ガルーラ', 'サンドパン', 'カモネギ'],
         answer: 'カモネギ',
-        correctImage: new URL('@/assets/kamonegi.png', import.meta.url).href,
+        correctImage: Kamonegi,
         explanation: 'ポケモンGOで最初に実装された地域限定ポケモンはカモネギです。',
     },
 ]
