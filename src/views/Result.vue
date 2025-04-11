@@ -7,13 +7,26 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { computed, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute()
+const router = useRouter()
 
 const correctCount = Number(route.query.correct) || 0
 const totalQuestions = Number(route.query.total) || 10
+
+onMounted(() => {
+    // クエリが不正な場合は、NotFound画面に遷移
+    if (
+        isNaN(correctCount) || isNaN(totalQuestions) ||
+        correctCount < 0 || totalQuestions <= 0 || correctCount > totalQuestions
+    ) {
+        router.replace({ // replaceを使うことで、履歴に残らないようにする。戻るボタンで戻れないようにする(悪いURLからの遷移を防ぐ)
+            name: 'NotFound'
+        })
+    }
+})
 
 const resultImage = computed(() => {
 

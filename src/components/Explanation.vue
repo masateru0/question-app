@@ -7,7 +7,8 @@
         </div>
         <div v-else>
             <img src="@/assets/wrong.jpg" alt="不正解画像" class="img-fluid /" />
-            <p class="text-danger mt-3">残念...不正解です...</p>
+            <h3 class="text-danger mt-3">残念...不正解です...</h3>
+            <p class="mt-3">正解は{{ question.answer }}でした。</p>
         </div>
         <button class="btn btn-success mt-4" @click="$emit('next')">次へ進む</button>
     </div>
