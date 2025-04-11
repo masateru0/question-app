@@ -16,8 +16,6 @@
 
 <script setup>
 
-// TODO: 画像が表示されない問題を解決する
-
     defineProps({
         isCorrect: Boolean,
         question: Object
