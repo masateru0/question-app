@@ -12,20 +12,17 @@
     </div>
 </template>
 <script setup>
-import { ref } from 'vue'
-import questionData from '@/data/QuestionData.js'
 import AnswerButton from './AnswerButton.vue'
 
-defineProps({
+const props = defineProps({
     question: Object // Home.vue から渡される現在の質問データ
 })
+// propsの書き方が違っていたので修正
 
 const emit = defineEmits(['answered'])
 
-const currentIndex = ref(0)
-
 const handleAnswer = (choice) => {
-    const correctAnswer = questionData[currentIndex.value].answer
+    const correctAnswer = props.question.answer // 先頭にpropsをつけなきゃいけなかったので修正
     const isCorrect = choice === correctAnswer
     emit('answered', isCorrect) // 回答結果を親に渡す
 }
