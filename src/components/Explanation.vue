@@ -20,3 +20,6 @@ defineProps({
     question: Object,
 })
 </script>
+
+TODO 画像サイズを全て統一する
+TODO 画像・文字を真ん中に寄せる

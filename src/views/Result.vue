@@ -51,3 +51,9 @@ const resultRank = computed(() => {
     margin-top: 50px;
 }
 </style>
+
+TODO 画像サイズを全て統一する（結果画面は大きく表示させる）
+TODO トップに戻るボタンをつける
+TODO 4~6の画像を変更する
+TODO 結果画面の文字を大きくする
+TODO 画像・文字を真ん中に寄せる

@@ -32,3 +32,4 @@ const handleAnswer = (choice) => {
     emit('answered', isCorrect) // 回答結果を親に渡す
 }
 </script>
+TODO 囲いの中に問題文が出るようにしてバックグラウンドカラーor画像をつける
