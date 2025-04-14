@@ -34,7 +34,7 @@ const handleAnswer = (correct) => {
     isCorrect.value = correct;
     if (correct) {
         correctCount.value++; // 正解数をカウント
-        console.log(`正解数: ${correctCount.value}`); // ここで正解した時に＋２されていることを確認した⇨AnswerButton.vueへ
+        // console.log(`正解数: ${correctCount.value}`); ここで正解した時に＋２されていることを確認した⇨AnswerButton.vueへ
     }
     currentView.value = 'explanation'; // 回答後に説明画面に遷移
 }

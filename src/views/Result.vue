@@ -29,12 +29,9 @@ onMounted(() => {
 })
 
 const resultImage = computed(() => {
-
-    if (correctCount === 0) return query('@/assets/result0.png',)
-
     if (correctCount === 0) return new URL('@/assets/result0.png', import.meta.url).href;
     if (correctCount <= 3) return new URL('@/assets/result1to3.jpg', import.meta.url).href;
-    if (correctCount <= 6) return new URL('@/assets/result4to6.jpeg', import.meta.url).href;
+    if (correctCount <= 6) return new URL('@/assets/result4to6.png', import.meta.url).href;
     if (correctCount <= 9) return new URL('@/assets/result7to9.jpg', import.meta.url).href;
     return new URL('@/assets/result10.jpg', import.meta.url).href;
 })

@@ -6,7 +6,7 @@
                 v-for="(choice, index) in question.choices"
                 :key="index"
                 :text="choice"
-                @click="handleAnswer(choice)"
+                @click-event="handleAnswer(choice)"
             />
         </div>
     </div>
