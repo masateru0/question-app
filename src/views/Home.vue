@@ -1,6 +1,9 @@
 <template>
-    <div>
-        <h1>ポケモンクイズ</h1>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <img src="@/assets/monster-ball.jpg" alt="Monsterball" class="quiz-logo">
+            <h1 class="quiz-title">ポケモンクイズ</h1>
+        </div>
         <Question
             v-if="currentView === 'question'"
             :question="currentQuestion"
@@ -57,5 +60,25 @@ const goToNextQuestion = () => {
 }
 </script>
 
-TODO タイトル・問題・回答ボタンを真ん中に配置する
-TODO タイトルの横にモンスターボールの画像を表示する（サイズはタイトルと同じくらい）
+<style scoped>
+
+.quiz-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+.quiz-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.quiz-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+</style>

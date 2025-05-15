@@ -31,9 +31,9 @@ onMounted(() => {
 const resultImage = computed(() => {
     if (correctCount === 0) return new URL('@/assets/result0.png', import.meta.url).href;
     if (correctCount <= 3) return new URL('@/assets/result1to3.jpg', import.meta.url).href;
-    if (correctCount <= 6) return new URL('@/assets/result4to6.png', import.meta.url).href;
+    if (correctCount <= 6) return new URL('@/assets/result4to6.jpg', import.meta.url).href;
     if (correctCount <= 9) return new URL('@/assets/result7to9.jpg', import.meta.url).href;
-    return new URL('@/assets/result10.jpg', import.meta.url).href;
+    return new URL('@/assets/result100.jpg', import.meta.url).href;
 })
 
 const resultRank = computed(() => {
@@ -54,6 +54,5 @@ const resultRank = computed(() => {
 
 TODO 画像サイズを全て統一する（結果画面は大きく表示させる）
 TODO トップに戻るボタンをつける
-TODO 4~6の画像を変更する
 TODO 結果画面の文字を大きくする
 TODO 画像・文字を真ん中に寄せる

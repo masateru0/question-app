@@ -1,5 +1,9 @@
 <template>
-    <button @click="$emit('click-event')" class="btn btn-outline-primary m-2">
+    <button
+    @click="$emit('click-event')"
+    class="answer-button"
+    :style="{backgroundColor: backgroundColor}"
+    >
         {{ text }}
     </button>
 </template>
@@ -10,10 +14,29 @@ defineProps({
         type: String,
         required: true,
     },
+    backgroundColor: {
+        type: String,
+        default: true,
+    },
 })
 
 // @click="$emit('click')" に加えて、button 内部でまた何か処理してたら クリックが2重に発火している可能性があった
 // Question.vueのコードをいじってエラー解消した
 </script>
 
-TODO CSSでボタンを大きくする。左から赤・青・黄色・緑の順番で並べる。ホバー時に若干色が変わるようにする。
+<style scoped>
+.answer-button {
+    width: 600px;
+    height: 218px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.answer-button:hover {
+    filter: brightness(1.2);
+}
+</style>
