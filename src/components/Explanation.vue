@@ -31,10 +31,10 @@ div {
     height: 100vh;
 }
 
-.image-fluid {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+.img-fluid {
+    width: 700px;
+    height: 500px;
+    object-fit: contain;
     margin-bottom: 20px;
 }
 
@@ -53,4 +53,5 @@ button {
     padding: 10px 20px;
     font-size: 18px;
 }
+
 </style>

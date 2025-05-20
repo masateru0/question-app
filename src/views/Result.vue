@@ -3,6 +3,7 @@
         <img :src="resultImage" alt="結果画像">
         <p>正解数は {{ correctCount }} / {{ totalQuestions }} でした。</p>
         <p>あなたは{{ resultRank }}です</p>
+        <button class="btn btn-primary" @click="goToHome">トップに戻る</button>
     </div>
 </template>
 
@@ -43,16 +44,38 @@ const resultRank = computed(() => {
     if (correctCount <= 9) return 'ポケモンマスター級'
     return '伝説級'
 })
+
+const goToHome = () => {
+    router.push({ name: 'Home' }) // トップページに遷移
+}
 </script>
 
 <style scoped>
 .result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-top: 50px;
+    height: 100vh;
+}
+
+.result img {
+    width: 800px;
+    height: 500px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.result p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.result button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
 }
 </style>
-
-TODO 画像サイズを全て統一する（結果画面は大きく表示させる）
-TODO トップに戻るボタンをつける
-TODO 結果画面の文字を大きくする
-TODO 画像・文字を真ん中に寄せる
