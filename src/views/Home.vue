@@ -1,7 +1,7 @@
 <template>
     <div class="quiz-container">
         <div class="quiz-header">
-            <img src="@/assets/monster-ball.jpg" alt="Monsterball" class="quiz-logo">
+            <img src="@/assets/monster-ball.jpg" alt="Monsterball" class="quiz-logo" />
             <h1 class="quiz-title">ポケモンクイズ</h1>
         </div>
         <Question
@@ -19,19 +19,44 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, watch, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import Question from '@/components/Question.vue'
 import Explanation from '@/components/Explanation.vue'
 import questionData from '@/data/QuestionData.js'
 
 const router = useRouter() // Vue Router を使用するためのフック
+const route = useRoute() // 現在のルート情報を取得するためのフック
 
 const currentView = ref('question') // 現在の表示 ('question' または 'explanation')
 const currentIndex = ref(0) // 現在の質問のインデックス
 const isCorrect = ref(false) // 回答が正解かどうか
 const currentQuestion = ref(questionData[currentIndex.value]) // 現在の質問データ
 const correctCount = ref(0) // 正解数
+
+// URLクエリから状態を復元
+onMounted(() => {
+    const idx = parseInt(route.query.idx)
+    const view = route.query.view
+    if (!isNaN(idx) && idx >= 0 && idx < questionData.length) {
+        currentIndex.value = idx
+        currentQuestion.value = questionData[currentIndex.value]
+    }
+    if (view === 'explanation' || view === 'question') {
+        currentView.value = view
+    }
+})
+
+// 状態が変わるたびにURLを更新
+watch([currentIndex, currentView], ([idx, view]) => {
+    router.replace({
+        query: {
+            ...route.query,
+            idx: idx,
+            view: view
+        }
+    })
+})
 
 const handleAnswer = (correct) => {
     isCorrect.value = correct
@@ -67,18 +92,24 @@ const goToNextQuestion = () => {
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-left: 15px;
 }
 
 .quiz-logo {
     width: 40px;
     height: 40px;
+    object-fit: cover;
 }
 
 .quiz-title {
     font-size: 24px;
     font-weight: bold;
     text-align: left;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
 }
 </style>
+TODO //途中でブラウザの戻るボタンを押すと結果画面に飛ぶバグがあるので修正する
+TODO //別でトップ画面を用意する

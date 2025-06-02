@@ -49,10 +49,10 @@ const buttonColors = ['#D56161', '#5A50CB', '#D5CF6F', '#73DA82']
     background-color: #FFF;
     padding: 30px;
     width: 1250px;
-    height: 310px;
+    height: 200px;
     border-radius: 10px;
     border: 1px solid #ccc;
-    margin-bottom: 58px;
+    margin-bottom: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
@@ -61,14 +61,13 @@ const buttonColors = ['#D56161', '#5A50CB', '#D5CF6F', '#73DA82']
 }
 
 .question-box h2 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .button-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 30px;
 }
-
 </style>

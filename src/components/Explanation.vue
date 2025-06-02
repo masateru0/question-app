@@ -28,14 +28,12 @@ div {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
 }
 
 .img-fluid {
     width: 700px;
-    height: 500px;
+    height: 450px;
     object-fit: contain;
-    margin-bottom: 20px;
 }
 
 h3 {
@@ -53,5 +51,4 @@ button {
     padding: 10px 20px;
     font-size: 18px;
 }
-
 </style>

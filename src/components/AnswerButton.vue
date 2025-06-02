@@ -27,7 +27,7 @@ defineProps({
 <style scoped>
 .answer-button {
     width: 600px;
-    height: 218px;
+    height: 180px;
     font-size: 20px;
     color: white;
     border: none;

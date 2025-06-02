@@ -62,7 +62,7 @@ const goToHome = () => {
 
 .result img {
     width: 800px;
-    height: 500px;
+    height: 450px;
     object-fit: contain;
     margin-bottom: 20px;
 }
