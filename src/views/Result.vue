@@ -46,7 +46,7 @@ const resultRank = computed(() => {
 })
 
 const goToHome = () => {
-    router.push({ name: 'Home' }) // トップページに遷移
+    router.push({ name: 'HomePage' }) // トップページに遷移
 }
 </script>
 
