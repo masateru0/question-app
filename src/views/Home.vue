@@ -20,7 +20,7 @@
 
 <script setup>
 import { ref, watch, onMounted } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter, useRoute, onBeforeRouteLeave } from 'vue-router'
 import Question from '@/components/Question.vue'
 import Explanation from '@/components/Explanation.vue'
 import questionData from '@/data/QuestionData.js'
@@ -38,17 +38,21 @@ const correctCount = ref(0) // 正解数
 onMounted(() => {
     const idx = parseInt(route.query.idx)
     const view = route.query.view
+
     if (!isNaN(idx) && idx >= 0 && idx < questionData.length) {
         currentIndex.value = idx
         currentQuestion.value = questionData[currentIndex.value]
     }
     if (view === 'explanation' || view === 'question') {
         currentView.value = view
+    } else {
+        currentView.value = 'question' // デフォルトで質問画面に設定
     }
 })
 
 // 状態が変わるたびにURLを更新
 watch([currentIndex, currentView], ([idx, view]) => {
+    if (view === 'result') return // 結果画面ではURLを更新しない
     router.replace({
         query: {
             ...route.query,
@@ -74,7 +78,7 @@ const goToNextQuestion = () => {
         currentQuestion.value = questionData[currentIndex.value] // 次の質問データを取得
         currentView.value = 'question' // 質問画面に戻る
     } else {
-        router.push({
+        router.replace({  // replace を使用して履歴に残らないようにする
             name: 'Result',
             query: {
                 correct: correctCount.value, // 正解数をクエリパラメータに渡す
@@ -83,6 +87,19 @@ const goToNextQuestion = () => {
         })
     }
 }
+
+onBeforeRouteLeave((to, from, next) => {
+    if (currentView.value === 'result') {
+        const confirmLeave = window.confirm('結果画面から戻りますか？')
+        if (confirmLeave) {
+            next()
+        } else {
+            next(false)
+        }
+    } else {
+        next()
+    }
+})
 </script>
 
 <style scoped>
@@ -111,5 +128,4 @@ const goToNextQuestion = () => {
     line-height: 1;
 }
 </style>
-TODO //途中でブラウザの戻るボタンを押すと結果画面に飛ぶバグがあるので修正する
 TODO //別でトップ画面を用意する
