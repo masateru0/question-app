@@ -128,4 +128,3 @@ onBeforeRouteLeave((to, from, next) => {
     line-height: 1;
 }
 </style>
-TODO //別でトップ画面を用意する
