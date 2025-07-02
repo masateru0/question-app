@@ -1,13 +1,13 @@
-import Raichu from '@/assets/raichu.png'
-import Lizardon from '@/assets/lizardon.png'
-import Redgreen from '@/assets/redgreen.png'
-import DandP from '@/assets/dandp.jpg'
-import XandY from '@/assets/xandy.jpg'
-import BandW from '@/assets/bandw.jpg'
-import First3Dg from '@/assets/first3dg.jpg'
-import Rekkuza from '@/assets/rekkuza.jpg'
-import Rugia from '@/assets/rugia.png'
-import Kamonegi from '@/assets/Kamonegi.png'
+import Raichu from '@/assets/correct-images/raichu.png'
+import Lizardon from '@/assets/correct-images/lizardon.png'
+import Redgreen from '@/assets/correct-images/redgreen.png'
+import DandP from '@/assets/correct-images/dandp.jpg'
+import XandY from '@/assets/correct-images/xandy.jpg'
+import BandW from '@/assets/correct-images/bandw.jpg'
+import First3Dg from '@/assets/correct-images/first3dg.jpg'
+import Rekkuza from '@/assets/correct-images/rekkuza.jpg'
+import Rugia from '@/assets/correct-images/rugia.png'
+import Kamonegi from '@/assets/correct-images/Kamonegi.png'
 
 export default [
     {

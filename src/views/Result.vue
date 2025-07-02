@@ -30,11 +30,11 @@ onMounted(() => {
 })
 
 const resultImage = computed(() => {
-    if (correctCount === 0) return new URL('@/assets/result0.png', import.meta.url).href;
-    if (correctCount <= 3) return new URL('@/assets/result1to3.jpg', import.meta.url).href;
-    if (correctCount <= 6) return new URL('@/assets/result4to6.jpg', import.meta.url).href;
-    if (correctCount <= 9) return new URL('@/assets/result7to9.jpg', import.meta.url).href;
-    return new URL('@/assets/result100.jpg', import.meta.url).href;
+    if (correctCount === 0) return new URL('@/assets/result-images/result0.png', import.meta.url).href;
+    if (correctCount <= 3) return new URL('@/assets/result-images/result1to3.jpg', import.meta.url).href;
+    if (correctCount <= 6) return new URL('@/assets/result-images/result4to6.jpg', import.meta.url).href;
+    if (correctCount <= 9) return new URL('@/assets/result-images/result7to9.jpg', import.meta.url).href;
+    return new URL('@/assets/result-images/result100.jpg', import.meta.url).href;
 })
 
 const resultRank = computed(() => {
