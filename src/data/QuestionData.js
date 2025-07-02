@@ -1,12 +1,12 @@
 import Raichu from '@/assets/raichu.png'
 import Lizardon from '@/assets/lizardon.png'
 import Redgreen from '@/assets/redgreen.png'
-import DandP from '@/assets/DandP.jpg'
-import XandY from '@/assets/XandY.jpg'
-import BandW from '@/assets/BandW.jpg'
-import First3Dg from '@/assets/First3Dg.jpg'
-import Rekkuza from '@/assets/Rekkuza.jpg'
-import Rugia from '@/assets/Rugia.png'
+import DandP from '@/assets/dandp.jpg'
+import XandY from '@/assets/xandy.jpg'
+import BandW from '@/assets/bandw.jpg'
+import First3Dg from '@/assets/first3dg.jpg'
+import Rekkuza from '@/assets/rekkuza.jpg'
+import Rugia from '@/assets/rugia.png'
 import Kamonegi from '@/assets/Kamonegi.png'
 
 export default [
